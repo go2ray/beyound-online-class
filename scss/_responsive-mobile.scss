@@ -1,0 +1,652 @@
+/* Use Local SCSS Files */
+@use "variables" as *;
+@use "mixin" as *;
+
+/* Responsive for Mobile */
+@media (max-width: $breakpoint-mobile) {
+    /* ################ Common CSS ################ */
+    section:not(.front-slider, .class-detail-img, .category-class, .focus-class) {
+        padding: $section-padding-mobile;
+    }
+    [class *= inner] {
+        width: 100%;
+    }
+    .front-header {
+        h2 {
+            font-size: 20px;
+        }
+    }
+
+    /*  Header */
+    header {
+        .header-inner {
+            .logo-search {
+                padding: 20px 20px;
+                gap: 0;
+                justify-content: space-between;
+                .search {
+                    display: none;
+                }
+                .login-join-buttons {
+                    display: flex;
+                    white-space: nowrap;
+                }        
+            }
+            .gnb {
+                padding: 0 0 0 20px;
+                .trigger {
+                    span {
+                        display: none;
+                    }
+                    &::before {
+                        background: url('/images/icon-category-search.png');
+                    }
+                }
+                .special-navi {
+                    white-space: nowrap; /* 메뉴들아, 밑으로 줄바꿈 하지 말고 가로로 한 줄로 쫙 서! */
+                    overflow-x: auto; /* 오른쪽으로 삐져나간 애들은 가로 스크롤로 밀어서 보게 해줄게! */
+                    overflow-y: hidden; /* 대신, 손가락 흔들릴 때 위아래로 덜덜거리지 않게 세로는 꽉 잠가! */
+                }
+            }
+        }
+        /* Mega Navi */
+        .mega-navi {
+            display: block;
+            position: fixed;
+            top: 0;
+            left: -300px;
+            width: 300px;
+            height: 100vh;
+            padding-top: 60px;
+            .search-mobile {
+                display: block;
+                width: 270px;
+                margin: auto;
+            }
+            .mega-navi-inner {
+                flex-direction: column;
+                width: inherit;
+                .mega-navi-item {
+                    &:last-child b {
+                        border: none;
+                    }
+                    b {
+                        border-bottom: 1px solid $border-light;
+                        display: block;
+                        padding: 5px 20px;
+                        color: $text-light;
+                        &::after {
+                            content: '\F64D';
+                            font-family: $bs-font;
+                            float: right;
+                            color: $text-light;
+                            font-size: 16px;
+                        }
+                        &.active {
+                            color: $white;
+                        }
+                        &.active::after {
+                            content: '\F2EA';
+                            color: $white;
+                            font-size: 16px;
+                        }
+                    }
+                    .mega-navi-item-wrap {
+                        display: none;
+                        padding: 10px 20px;
+                    }
+                }
+            }
+            .btn-mega-navi-close {
+                display: block;
+                position: absolute;
+                border: none;
+                background-color: transparent;
+                color: $white;
+                top: 10px;
+                left: 10px;
+                font-size: 1.6em;
+            }
+        }
+    }
+
+    /* Footer */
+    footer {
+        padding: 30px 0;
+        .footer-inner {
+            .lnb-wrap {
+                flex-direction: column;
+                gap: 20px;
+                border: none;
+                .footer-slogan {
+                    text-align: center;
+                    font-size: 22px;
+                }
+                .lnb {
+                    flex-direction: column;
+                    padding: 0px 20px;
+                    .link-item {
+                        .link-item-title  {
+                            padding: 10px 0px;
+                            border-bottom: 1px solid $border-light;
+                            pointer-events: auto; //모바일에선 클릭가능
+                            &::after {
+                                content: '\F282';
+                                font-family: $bs-font;
+                                float: right;
+                            }
+                            &.active::after {
+                                transform: rotateX(180deg);
+                                transition: 0.5s;
+                            }
+                        }
+                        .link-item-content {
+                            display: none;
+                            padding: 10px 0;
+                            a {
+                                padding: 3px 0;
+                            }
+                        }
+                    }
+                }
+            }
+            .copyright-wrap {
+                flex-direction: column;
+                text-align: center;
+                padding: 0;
+                .company-info-trigger {
+                    display: block;
+                    color: $white;
+                    font-weight: 400;
+                    &::after {
+                        content: '\F282';
+                        font-family: $bs-font;
+                        display: inline-block;
+                        transform: translateY(2px);
+                        padding-left: 5px;
+                    }
+                    &.active::after {
+                        transform: rotateX(180deg);
+                    }
+                }
+                address {
+                    display: none;
+                    p {
+                        line-height: 1em;
+                        padding: 0 20px;
+                    }
+                }
+                .sns {
+                    padding-top: 20px;
+                }
+            }
+        }
+    }
+    /* Go to Top */
+    .gototop {
+        width: 40px;
+        height: 40px;
+        bottom: 20px;
+        &.active {
+            left: 20px;
+        }
+        .bi {
+            font-size: 18px;
+        }
+        &::after {
+            margin-top: -6px;
+        }
+    }
+
+    /* Front Event Banner */
+    .front-event-banner {
+        right: auto;//우측 정렬 초기화
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 20px;
+        width: calc(100% - 40px);
+        max-width: 360px;
+    }
+
+    /* ################ Front Page : index.html ################ */
+    /* Section : Front Slider */
+    .front-slider {
+        .front-slider-items {
+            .front-slider-item {
+                .front-slider-item-wrap {
+                    flex-direction: column;
+                    width: 100%;
+                    .desc {
+                        margin-top: 20px;
+                        h1 {
+                            font-size: 24px;
+                            margin: 5px 0;
+                        }
+                    }
+                    .pic {
+                        img {
+                            height: 50%;
+                            transform: translateY(25px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /* Section : Category Shortcut */
+    .category-shortcut {
+        .category-shortcut-inner {
+            .category-shortcut-items {
+                flex-wrap: wrap;
+                padding: 0 10px;
+                .category-shortcut-item {
+                    flex-basis: 25%;
+                    box-shadow: none;
+                    height: auto;
+                    span {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+
+    /* Section : Focus Class */
+    .focus-class {
+        padding: 30px 0 !important;
+        .focus-class-inner {
+            .focus-class-content {
+                overflow-x: hidden;
+                padding: 0 20px;
+                @at-root .focus-class-items {
+                    width: 540px;
+                    .focus-class-item {
+                        .thum {
+                            height: 120px;
+                            img {
+                                border-radius: $radius-l;
+                            }
+                        }
+                        .overview {
+                            h4 {
+                                font-size: 14px;
+                                /* 제목 2줄 유지 */
+                                line-height: 1.4;
+                                max-height: 2.8em;
+                                @include ellipsis($line: 2);
+                            }
+                            .class-price {
+                                transform: scale(0.8); //중앙을 기준으로 줄어듬
+                                transform-origin: left; //왼쪽고정
+                                white-space: nowrap;
+                                > * {
+                                    margin: 2px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    /* Section : Best Class */
+    .best-class {
+        .best-class-inner {
+            .best-class-content {
+                .best-class-wrap {
+                    flex-direction: column;
+                    .invite-banner {
+                        img {
+                            width: 100%;
+                            height: auto;
+                            border-radius: $radius-l;
+                        }
+                    }
+                    .best-class-items-outer {
+                        .best-class-items {
+                            flex-direction: column;
+                            margin-bottom: 16px;
+                            .best-class-item {
+                                margin-bottom: -6px;
+                                .thum {
+                                    img {
+                                        border-radius: $radius-l;
+                                    }
+                                }
+                                .overview {
+                                    h4 {
+                                        font-size: 14px;
+                                        @include ellipsis($line: 2);
+                                    }
+                                    .class-price {
+                                        > * {
+                                            margin-left: 0;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /* Section :  Early bird */
+    .early-bird {
+        .early-bird-inner {
+            .early-bird-content {
+                .countdown-wrap {
+                    width: 100%;
+                    margin-bottom: 20px;
+                    #early-bird-countdown {
+                        font-size: 22px;
+                    }
+                }
+            }
+            .early-bird-banner {
+                flex-direction: column;
+                cursor: pointer;
+                padding: 20px;
+                border-radius: $radius-l;
+                .banner-about {
+                    h1 {
+                        font-size: 16px;
+                    }
+                    .hash-tag {
+                        font-size: 14px;
+                        line-height: 1.6;
+                    }
+                }
+                .banner-thum {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    /* Section : Blog */
+    .blog {
+        .blog-inner {
+            .blog-content {
+                .blog-items {
+                    flex-direction: column;
+                    .blog-item {
+                        margin-bottom: 10px;
+                        .thum {
+                            img {
+                                border-radius: $radius-l;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /* Section : Slogan */
+    .slogan {
+        .slogan-inner {
+            .slogan-content {
+                padding: 0 20px;
+                h1 {
+                    font-size: 22px;
+                }
+                span {
+                    font-size: 16px;
+                    font-weight: 300;
+                }
+            }
+        }
+    }
+
+    /* Section : Tip&Tech */
+    .tip-tech {
+        .tip-tech-inner {
+            .tip-tech-content {
+                .tip-tech-items {
+                    flex-direction: column;
+                    .tip-tech-item {
+                        .tip-tech-info {
+                            h3 {
+                                font-size: 14px;
+                            }
+                            p {
+                                font-size: 13px;
+                            }
+                        }
+                        .thum {
+                            img {
+                                border-radius: $radius-l;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /* ################# Class Detail : class-detail.html ############### */
+    .category-class {
+        padding: 30px 0 !important;
+        .category-class-inner {
+            .category-class-main {
+                padding: 0 20px;
+            }
+            .category-class-detail {
+                padding: 0 20px;
+                .category-shortcut-btn-group {
+                    padding-bottom: 20px;
+                    .btn-shortcut {
+                        margin: 0 0 5px 2px;
+                        font-size: 12px;
+                        padding: 5px 8px;
+                    }
+                }
+            }
+            .category-class-sort  {
+                padding: 0 10px;
+                select {
+                    width: 100px;
+                }
+                button {
+                    padding: 12px 14px;
+                }
+            }
+            .category-class-wrap {
+                overflow-x: hidden;
+                padding-left: 20px;
+            }
+        }
+    }
+
+    /* ############## Taje Course & Cart : take.course.html ############# */
+    .take-course {
+        padding: 0 !important;
+        .take-course-inner {
+            flex-direction: column;
+            gap: 10px;
+            > div {
+                background-color: $bg-body;
+                border-radius: 0;
+                box-shadow: none;
+                padding: 30px 20px;
+            }
+            .cart-wrap {
+                .cart-items {
+                    .cart-item {
+                        .thum {
+                            width: 60px;
+                        }
+                        .cart-overview {
+                            .cart-overview-header {
+                                .btn-clear {
+                                    transform: translateY(-8px);
+                                }
+                            }
+                            .cart-overview-detail {
+                                flex-direction: column;
+                                gap: 4px;
+                                .cart-overview-price {
+                                    text-align: left;
+                                    > * {
+                                        display: inline-block;
+                                        padding-left: 3px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .cart-item-empty {
+                    padding: 50px 0;
+                }
+            }
+            .payment {
+                .price-total-wrap {
+                    margin: 0;
+                }
+            }
+        }
+    }
+
+    /* ################# Class Detail : class-detail.html ############### */
+    .class-detail-img {
+        .class-detail-img-inner {
+            flex-direction: column;
+            height: auto;
+            padding: 30px 0 10px 0;
+            .heading {
+                display: none;
+            }
+            .cover-img {
+                text-align: center;
+                img {
+                    width: 80%;
+                    height: auto;
+                }
+            }
+        }
+    }
+    .class-detail-full {
+        padding: 0 !important;
+        .class-detail-full-inner {
+            .class-detail-full-content {
+                flex-direction: column-reverse;
+                gap: 10px;
+                > div {
+                    background-color: $bg-body;
+                    border-radius: 0;
+                    box-shadow: none;
+                    padding: 20px 0 20px 20px;
+                }
+                .class-detail-info {
+                /* 클래스 메뉴 */
+                .class-detail-navi {
+                        padding-right: 0 !important;
+                        top:108px;
+                        gap: 12px;
+                        overflow-y: hidden;
+                        a {
+                            font-size: 14px;
+                            white-space: nowrap;
+                        }
+                    }
+                    /* article : 클래스 소개 */
+                    .class-introduce {
+                        padding-right: 20px;
+                        * img {
+                            width: 100%;
+                        }
+                    }
+                    /* article : 커리큘럼 */
+                    .class-curriculum {
+                        padding-right: 20px;
+                        .class-detail-wrap {
+                            .curriculum-accordion {
+                                .accdion-item-wrap {
+                                    .chapter-title {
+                                        font-size: 13px;
+                                        .chapter-hour {
+                                            display: none;
+                                        }
+                                    }
+                                    .chapter-content {
+                                        .chapter-content-class {
+                                            .class-subject {
+                                                font-size: 13px;
+                                            }
+                                            .class-hour {
+                                                .curriculum-badge.free {
+                                                    white-space: nowrap;
+                                                }
+                                                .class-hour-detail{
+                                                    display: none;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    /* article : 수강후기 */
+                    .class-reivew {
+                        padding-right: 20px;
+                        .class-detail-wrap {
+                            .review-group {
+                                flex-direction: column;
+                                .review-focus-group  {
+                                    padding: 0 0 20px 20px;
+                                    border-bottom: 1px solid $border-light;
+                                }
+                            }
+                        }
+                    }
+                    /* article : 자주 묻는 질문들 */
+                    .class-faq {
+                        padding-right: 20px;
+                        .class-detail-wrap {
+                            .faq-accordion {
+                                .faq-title {
+                                    text-align: left;
+                                }
+                            }
+                        }
+                    }
+                    /* article : 멘토 소개 */
+                    .class-mentor {
+                        padding-right: 20px;
+                        .class-detail-wrap {
+                            flex-direction: column;
+                        }
+                    }
+                }
+                .class-detail-sidebar {
+                    position: static;
+                    padding-right: 20px;
+                    .class-detail-sidebar-wrap.group-main-action {
+                        .cart-confirm-wrap {
+                            .cart-confirm {
+                                width: 100%;
+                                span {
+                                    font-size: 16px;
+                                    display: block;
+                                    margin-bottom: 5px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    /* Class Share Modal */
+    .modal.modal-class-share {
+        .class-share {
+            width: calc(100% - 40px);
+        }
+    }
+}

@@ -1,0 +1,14 @@
+{
+  "liveSassCompile.settings.excludeList": ["**/node_modules/**", ".vscode/**"],
+  "liveSassCompile.settings.includeItems": [
+
+  ],
+  "liveSassCompile.settings.formats": [
+    {
+      "format": "expanded",
+      "extensionName": ".css",
+      "savePath": "/css"
+    }
+],
+"liveServer.settings.multiRootWorkspaceName": "03. SCSS Publishing",
+}

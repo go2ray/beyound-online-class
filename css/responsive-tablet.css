@@ -1,0 +1,270 @@
+@charset "UTF-8";
+/* Import Local SCSS Files */
+/* ========================================================
+    Colors - 기본 팔레트 (절대 변하지 않는 물감 이름)
+   ======================================================== */
+/* ========================================================
+    Theme Colors - 의미적 역할 (실제 요소에 적용할 이름)
+   ======================================================== */
+/* ========================================================
+    Typography - 폰트 설정
+   ======================================================== */
+/* ========================================================
+    Layout & Breakpoints - 반응형 및 레이아웃 규격
+   ======================================================== */
+/* ========================================================
+    Z-Index Hierarchy - 레이어 우선순위
+   ======================================================== */
+/* ========================================================
+    UI Components - 그림자, 테두리 둥글기, 애니메이션
+   ======================================================== */
+/* 모든 요소 초기화 */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@latest/dist/web/variable/pretendardvariable.css");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  -webkit-font-smoothing: antialiased; /* 글꼴을 부드럽게 출력 */
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Pretendard", sans-serif;
+  color: #333;
+  font-weight: 400;
+  box-sizing: border-box;
+  line-height: 1.4; /* 줄 간격 초기화 */
+  font-size: 14px; /* 기본 폰트 사이즈 정의 */
+}
+
+body {
+  word-break: keep-all; /* 한글 단어 끊김 방지 */
+  margin: 0;
+}
+
+/* 리스트 스타일 제거
+ol, ul, li {
+    list-style: none;
+} */
+/* 링크 스타일 초기화 */
+a {
+  text-decoration: none;
+  color: inherit; /* 부모의 색상을 상속받음 */
+}
+
+/* 폼 요소(버튼, 입력창) 초기화 */
+button {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer; /* 마우스 커서를 손가락 모양으로 변경 */
+}
+
+input, textarea, select {
+  background: none;
+  border: none;
+  outline: none; /* 클릭 시 테두리 제거 */
+  -webkit-appearance: none; /* 브라우저 기본 UI 제거 */
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* 이미지 및 미디어 요소 */
+img, video, canvas {
+  max-width: 100%; /* 부모 너비를 넘지 않도록 설정 */
+  height: auto;
+  display: block; /* 하단 미세한 공백 제거 */
+  border: 0;
+}
+
+/* 주석 및 강조 요소 */
+address, em, i {
+  font-style: normal; /* 기울임꼴 제거 */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Font Icon : Bootstrap Icons */
+/* Pretendard Font */
+/* Google Font - Raleway */
+/* Spokahansans Neo font */
+@font-face {
+  font-family: "SpokaHanSansNeo";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Regular.woff") format("woff");
+  font-weight: normal;
+  font-display: swap;
+}
+/* Flexbox */
+/* 말줄임 처리 */
+/* Modal : 부모요소 */
+/* Modal : 자식요소(팝업창) */
+/* ::before 아이콘 */
+/* Responsive for Tablet */
+@media (min-width: 767px) and (max-width: 1024px) {
+  /* ################ Common CSS ################ */
+  section:not(.front-slider, .class-detail-img, .category-class, .focus-class) {
+    padding: 30px 20px;
+  }
+  [class*=inner] {
+    width: 100%;
+  }
+  /* Header */
+  header {
+    padding: 0 20px;
+  }
+  header .header-inner .search {
+    width: 260px;
+  }
+  header .mega-navi .mega-navi-inner {
+    width: 100%;
+    padding: 20px;
+    gap: 10px;
+  }
+  header .mega-navi .mega-navi-inner .mega-navi-item {
+    font-size: 14px;
+  }
+  /* ################ Front Page : index.html ################ */
+  /* Section : Front Slider */
+  .front-slider .front-slider-items .front-slider-item .front-slider-item-wrap {
+    width: 100%;
+    height: 300px;
+    padding: 0 30px;
+  }
+  .front-slider .front-slider-items .front-slider-item .front-slider-item-wrap .desc h1 {
+    font-size: 26px;
+  }
+  .front-slider .front-slider-items .front-slider-item .front-slider-item-wrap .pic img {
+    height: 240px;
+  }
+  /* Section : Category Shortcut */
+  .category-shortcut .category-shortcut-inner .category-shortcut-items .category-shortcut-item span {
+    font-size: 14px;
+  }
+  /* Section : Focus Class */
+  .focus-class {
+    padding: 0 20px !important;
+  }
+  .focus-class .focus-class-inner .focus-class-content .focus-class-items .focus-class-item .thum img {
+    border-radius: 10px;
+  }
+  .focus-class .focus-class-inner .focus-class-content .focus-class-items .slick-dots {
+    margin-top: 40px;
+  }
+  .focus-class .focus-class-inner .focus-class-content .focus-class-items .slick-dots li {
+    width: 10px;
+    height: 10px;
+    background-color: #f5f5f5;
+    border-radius: 50%;
+  }
+  .focus-class .focus-class-inner .focus-class-content .focus-class-items .slick-dots li.slick-active button:before {
+    background-color: #ed2040;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+  /* Section: Best Class */
+  .best-class .best-class-inner .best-class-content .best-class-wrap {
+    flex-direction: column-reverse;
+  }
+  .best-class .best-class-inner .best-class-content .best-class-wrap .invite-banner {
+    display: none;
+  }
+  .best-class .best-class-inner .best-class-content .best-class-wrap .invite-banner-tablet {
+    display: block;
+    text-align: center;
+    background-color: #aae8f3;
+    border-radius: 10px;
+  }
+  .best-class .best-class-inner .best-class-content .best-class-wrap .best-class-items-outer .best-class-items {
+    margin-bottom: 10px;
+  }
+  .best-class .best-class-inner .best-class-content .best-class-wrap .best-class-items-outer .best-class-items .best-class-item .thum img {
+    border-radius: 10px;
+  }
+  .best-class .best-class-inner .best-class-content .best-class-wrap .best-class-items-outer .best-class-items .best-class-item .overview h4 {
+    line-height: 1.2;
+    max-height: 2.4em;
+    display: -webkit-box;
+    /*! autoprefixer: off  */
+    -webkit-box-orient: vertical;
+    /*! autoprefixer: on */
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  /* Section :  Early bird */
+  .early-bird .early-bird-inner .early-bird-banner {
+    padding: 20px 40px;
+  }
+  .early-bird .early-bird-inner .early-bird-banner .banner-about h1 {
+    font-size: 24px;
+  }
+  .early-bird .early-bird-inner .early-bird-banner .banner-thum img {
+    width: 140px;
+  }
+  /* Section : Blog */
+  .blog .blog-inner .blog-content .blog-items .blog-item .thum {
+    height: 160px;
+  }
+  .blog .blog-inner .blog-content .blog-items .blog-item .thum img {
+    border-radius: 10px;
+  }
+  /* Section : Slogan */
+  .slogan {
+    padding: 30px !important;
+  }
+  /* Section : Tip&Tech */
+  .tip-tech .tip-tech-inner .tip-tech-content .tip-tech-items .tip-tech-item .thum img {
+    border-radius: 10px;
+  }
+  /* Footer */
+  footer {
+    padding: 30px 20px !important;
+  }
+  footer .footer-inner .lnb-wrap .footer-slogan {
+    display: none;
+  }
+  footer .footer-inner .copyright-wrap address p {
+    line-height: 1.2;
+    padding-right: 20px;
+  }
+  footer .footer-inner .copyright-wrap .sns {
+    white-space: nowrap;
+  }
+  /* ################ Category Main : category-main.html ############## */
+  .category-class {
+    padding: 30px 20px !important;
+  }
+  /* ############## Taje Course & Cart : take.course.html ############# */
+  .take-course .take-course-inner {
+    flex-direction: column;
+    gap: 20px;
+  }
+  /* ################# Class Detail : class-detail.html ############### */
+  .class-detail-img .class-detail-img-inner {
+    padding: 20px 40px;
+    height: auto;
+  }
+  .class-detail-img .class-detail-img-inner .heading h1 {
+    font-size: 24px;
+    font-weight: 600;
+  }
+  .class-detail-img .class-detail-img-inner .heading p {
+    font-size: 16px;
+  }
+  .class-detail-img .class-detail-img-inner .cover-img img {
+    height: 250px;
+  }
+  .class-detail-full .class-detail-full-inner .class-detail-full-content {
+    flex-direction: column-reverse;
+  }
+  .class-detail-full .class-detail-full-inner .class-detail-full-content .class-detail-info .class-introduce img {
+    width: 100%;
+  }
+  .class-detail-full .class-detail-full-inner .class-detail-full-content .class-detail-sidebar {
+    position: static;
+  }
+}

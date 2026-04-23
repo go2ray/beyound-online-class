@@ -1,0 +1,58 @@
+/* Use Local SCSS Files */
+@use "variables" as *;
+
+/* Flexbox */
+@mixin flex-box($justify: null, $align: null, $direction: null, $gap: 0) {
+    display: flex;
+    @if ($justify != null) { justify-content: $justify; }
+    @if ($align != null) { align-items: $align; }
+    @if ($direction != null) { flex-direction: $direction; }
+    @if ($gap != 0) { gap: $gap; }
+}
+
+/* 말줄임 처리 */
+@mixin ellipsis($line: 1) {
+    @if ($line == 1) {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+    @else {
+        display: -webkit-box;
+        /*! autoprefixer: off  */
+        -webkit-box-orient: vertical;
+        /*! autoprefixer: on */
+        -webkit-line-clamp: $line;
+        line-clamp: $line;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+/* Modal : 부모요소 */
+@mixin modal-parent {
+    position: fixed;
+    inset: 0;
+    z-index: $zi-modal;
+    display: none;
+}
+
+/* Modal : 자식요소(팝업창) */
+@mixin modal-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $bg-body;
+    padding: 30px;
+    border-radius: $radius-xl;
+    box-shadow: $shadow-sm;
+    z-index: $zi-base;
+}
+
+/* ::before 아이콘 */
+@mixin bs-icon($content) {
+    content: $content;
+    font-family: $bs-font;
+    display: inline-block;
+}

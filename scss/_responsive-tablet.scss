@@ -1,0 +1,278 @@
+/* Use Local SCSS Files */
+@use "variables" as *;
+@use "mixin" as *;
+
+/* Responsive for Tablet */
+@media (min-width: $breakpoint-mobile) and (max-width: $breakpoint-tablet) {
+    /* ################ Common CSS ################ */
+    section:not(.front-slider, .class-detail-img, .category-class, .focus-class) {
+        padding: $section-padding-mobile;
+    }
+    [class *= inner] {
+        width: 100%;
+    }
+    
+    /* Header */
+    header {
+        padding: 0 20px;
+        .header-inner {
+            .search {
+                width: 260px;
+            }
+        }
+        .mega-navi {
+            .mega-navi-inner {
+                width: 100%;
+                padding: 20px;
+                gap: 10px;
+                .mega-navi-item {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+    /* ################ Front Page : index.html ################ */
+    /* Section : Front Slider */
+    .front-slider {
+        .front-slider-items {
+            .front-slider-item {
+                .front-slider-item-wrap {
+                    width: 100%;
+                    height: 300px;
+                    padding: 0 30px;
+                    .desc {
+                        h1 {
+                            font-size: 26px;
+                        }
+                    }
+                    .pic {
+                        img {
+                            height: 240px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /* Section : Category Shortcut */
+    .category-shortcut {
+        .category-shortcut-inner {
+            .category-shortcut-items {
+                .category-shortcut-item {
+                    span {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+
+    /* Section : Focus Class */
+    .focus-class {
+        padding: 0 20px !important;
+        .focus-class-inner {
+            .focus-class-content {
+                .focus-class-items {
+                    .focus-class-item {
+                        .thum {
+                            img {
+                                border-radius: $radius-l;
+                            }
+                        }
+                    }
+                    .slick-dots {
+                        margin-top: 40px;
+                        li {
+                            width: 10px;
+                            height: 10px;
+                            background-color: $bg-section;
+                            border-radius: $radius-circle;
+                            &.slick-active button:before {
+                                background-color: $color-danger;
+                                width: 10px;
+                                height: 10px;
+                                border-radius: $radius-circle;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /* Section: Best Class */
+    .best-class {
+        .best-class-inner {
+            .best-class-content {
+                .best-class-wrap {
+                    flex-direction: column-reverse;
+                    .invite-banner {
+                        display: none;
+                    }
+                    .invite-banner-tablet {
+                        display: block;
+                        text-align: center;
+                        background-color: #aae8f3;
+                        border-radius: $radius-l;
+                    }
+                    .best-class-items-outer {
+                        .best-class-items {
+                            margin-bottom: 10px;
+                            .best-class-item {
+                                .thum {
+                                    img {
+                                        border-radius: $radius-l;
+                                    }
+                                }
+                                .overview {
+                                    h4 {
+                                        line-height: 1.2;
+                                        max-height: 2.4em;
+                                        @include ellipsis($line: 2);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /* Section :  Early bird */
+    .early-bird {
+        .early-bird-inner {
+            .early-bird-banner {
+                padding: 20px 40px;
+                .banner-about {
+                    h1 {
+                        font-size: 24px;
+                    }
+                }
+                .banner-thum {
+                    img {
+                        width: 140px;
+                    }
+                }
+            }
+        }
+    }
+
+    /* Section : Blog */
+    .blog {
+        .blog-inner {
+            .blog-content {
+                .blog-items {
+                    .blog-item {
+                        .thum {
+                            height: 160px;
+                            img {
+                                border-radius: $radius-l;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /* Section : Slogan */
+    .slogan {
+        padding: 30px !important;
+    }
+
+    /* Section : Tip&Tech */
+    .tip-tech { 
+        .tip-tech-inner {
+            .tip-tech-content {
+                .tip-tech-items {
+                    .tip-tech-item {
+                        .thum {
+                            img {
+                                border-radius: $radius-l;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /* Footer */
+    footer {
+        padding: $section-padding-mobile !important;
+        .footer-inner {
+            .lnb-wrap {
+                .footer-slogan {
+                    display: none;
+                }
+            }
+            .copyright-wrap {
+                address {
+                    p {
+                        line-height: 1.2;
+                        padding-right: 20px;
+                    }
+                }
+                .sns {
+                    white-space: nowrap;
+                }
+            }
+        }
+    }
+
+    /* ################ Category Main : category-main.html ############## */
+    .category-class {
+        padding: $section-padding-mobile !important;
+    }
+
+    /* ############## Taje Course & Cart : take.course.html ############# */
+    .take-course {
+        .take-course-inner {
+            flex-direction: column;
+            gap: 20px;
+        }
+    }
+
+    /* ################# Class Detail : class-detail.html ############### */
+    .class-detail-img {
+        .class-detail-img-inner {
+            padding: 20px 40px;
+            height: auto;
+            .heading {
+                h1 {
+                    font-size: 24px;
+                    font-weight: 600;
+                }
+                p {
+                    font-size: 16px;
+                }
+            }
+            .cover-img {
+                img {
+                    height: 250px;
+                }
+            }
+        }
+    }
+    .class-detail-full {
+        .class-detail-full-inner {
+            .class-detail-full-content {
+                flex-direction: column-reverse;
+                .class-detail-info {
+                    .class-introduce {
+                        img {
+                            width: 100%;
+                        }
+                    }
+                }
+                .class-detail-sidebar {
+                    position: static;
+                }
+            }
+        }
+    }
+
+}

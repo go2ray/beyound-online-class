@@ -1,0 +1,104 @@
+/* ========================================================
+    Colors - 기본 팔레트 (절대 변하지 않는 물감 이름)
+   ======================================================== */
+// Grayscale
+$white: #fff;
+$cloudy-gray: #f9f9f9;
+$light-gray: #f5f5f5;
+$silver-gray: #eeeeee;
+$dim-gray: #dddddd;
+$dark-gray: #bdbdbd;
+$light-black: #999;
+$silver-black: #777;
+$dim-black: #555;
+$dark-black: #333;
+$black: #000;
+
+// Point Colors
+$royalblue : #006be5;
+$orangered: #fd5631;
+$orange: #ffd912;
+$crimson: #ed2040;
+$forestgreen: #2ecc71;
+$turquoise: #00d2d3;
+$tomato: #ff4c79;
+
+
+/* ========================================================
+    Theme Colors - 의미적 역할 (실제 요소에 적용할 이름)
+   ======================================================== */
+// Text Colors
+$text-default: $dark-black;  // 기본 텍스트 (16px / 333)
+$text-link: $dim-black;      // 링크된 텍스트 (555) 
+$text-muted: $light-black;   // 설명, 부가 정보 (999)
+$text-light: $silver-black;  // LNB 등 연한 텍스트 (777)
+
+// Brand & Action Colors
+$color-primary: $royalblue;      // 메인 컬러 (로그인 버튼 등)
+$color-danger: $crimson;         // 경고/할인/활성화 (하트, 세일 뱃지)
+$color-point: $tomato;           // 경고외에 포인트 색상
+$color-success: $forestgreen;    // 긍정/완료 (수강신청, 장바구니, 체크)
+$color-accent: $orangered;       // 시선 집중 (결제 라디오 버튼 등)
+
+// Background & Borders
+$bg-body: $white;                // 기본 배경
+$bg-section: $light-gray;       // 어두운 섹션 배경
+$border-light: $silver-gray;     // 기본 연한 테두리
+$border-dark: $dim-gray;         // 인풋 등 진한 테두리
+
+
+/* ========================================================
+    Typography - 폰트 설정
+   ======================================================== */
+$primary-kr: 'Pretendard', sans-serif;
+$secondary-kr: 'SpoqaHanSansNeo-Regular';
+$primary-en: 'Raleway', sans-serif;
+$bs-font: "bootstrap-icons"; // 따옴표 추가 권장
+
+// Base Font Size
+$font-size-base: 16px; 
+
+
+/* ========================================================
+    Layout & Breakpoints - 반응형 및 레이아웃 규격
+   ======================================================== */
+// Breakpoints (미디어 쿼리용)
+$breakpoint-mobile: 767px;
+$breakpoint-tablet: 1024px;
+$breakpoint-desktop: 1160px;
+
+// Container & Spacing
+$inner-width: 1160px;            // .inner 공통 너비
+$section-padding-pc: 65px;       // PC 섹션 상하 여백
+$section-padding-mobile: 30px 20px;   // 모바일 섹션 여백
+$header-height: 40px;            // GNB 및 헤더 기준 높이
+
+
+/* ========================================================
+    Z-Index Hierarchy - 레이어 우선순위
+   ======================================================== */
+$zi-base: 1;                     // 기본 overlay 등
+$zi-header: 100;                 // header.active
+$zi-fixed: 500;                  // .gototop, .front-event-banner 
+$zi-modal: 1000;                 // .modal 최상단 요소
+
+
+/* ========================================================
+    UI Components - 그림자, 테두리 둥글기, 애니메이션
+   ======================================================== */
+// Border Radius
+$radius-s: 3px;                  // 뱃지, 입력창, 작은 버튼
+$radius-m: 5px;                  // 썸네일 이미지, 일반 버튼
+$radius-l: 10px;                 // 카테고리 숏컷 박스 등
+$radius-xl: 20px;                // 모달창, 얼리버드 배너
+$radius-circle: 50%;             // 아바타 이미지, 알람 아이콘
+
+// Box Shadows
+$shadow-sm: 0 0 5px rgba($black, 0.1);         // 헤더, gototop
+$shadow-md: 0 2px 12px rgba($black, 0.1);      // 상세페이지 컨텐츠 박스
+$shadow-lg: 0 0 20px rgba($black, 0.1);        // 카테고리 숏컷 박스
+
+// Transitions & Animations
+$transition-fast: 0.2s;
+$transition-base: 0.3s;          // 아코디언, 슬라이드 등
+$transition-slow: 0.5s;          // LNB 호버 등
