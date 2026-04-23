@@ -1355,6 +1355,7 @@ header .mega-navi .mega-navi-inner .mega-navi-item .mega-navi-item-wrap a:hover 
   color: #ed2040;
 }
 #early-bird-countdown em {
+  font-size: 30px;
   font-style: normal;
   background-color: #000;
   color: #fff;
@@ -1548,7 +1549,7 @@ footer * {
 footer .footer-inner .lnb-wrap {
   display: flex;
   gap: 100px;
-  border-bottom: 1px solid #eeeeee;
+  border-bottom: 1px solid #777;
   padding: 0 0 40px 0;
 }
 footer .footer-inner .lnb-wrap .footer-slogan p {
@@ -1570,6 +1571,7 @@ footer .footer-inner .lnb-wrap .lnb .link-item .link-item-title {
 footer .footer-inner .lnb-wrap .lnb .link-item .link-item-content a {
   display: block;
   line-height: 1.5;
+  color: #bdbdbd;
 }
 footer .footer-inner .lnb-wrap .lnb .link-item .link-item-content a:hover {
   text-decoration: underline;
@@ -1578,6 +1580,7 @@ footer .footer-inner .lnb-wrap .lnb .link-item .link-item-content a:hover {
 footer .footer-inner .lnb-wrap .lnb .link-item .link-item-content p {
   margin: 0;
   line-height: 1.5;
+  color: #bdbdbd;
 }
 footer .footer-inner .copyright-wrap {
   display: flex;
@@ -2076,8 +2079,10 @@ footer .footer-inner .copyright-wrap .sns a .bi:hover {
   font-size: 20px;
 }
 .signup .member-register .member-accout .login-slogan em {
+  font-size: 20px;
   font-style: normal;
   color: #006be5;
+  font-weight: 600;
 }
 .signup .member-register .member-accout img {
   margin: 30px 0;
@@ -2195,8 +2200,10 @@ footer .footer-inner .copyright-wrap .sns a .bi:hover {
   font-size: 20px;
 }
 .modal.modal-login .member-login .member-accout .login-slogan em {
+  font-size: 20px;
   font-style: normal;
   color: #006be5;
+  font-weight: 600;
 }
 .modal.modal-login .member-login .login-field div {
   position: relative;

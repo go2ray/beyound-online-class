@@ -543,6 +543,7 @@ header {
         color: $color-danger;
     }
     em {
+        font-size: 30px;
         font-style: normal;
         background-color: $black;
         color: $white;
@@ -739,7 +740,7 @@ footer {
     .footer-inner {
         .lnb-wrap {
             @include flex-box($gap: 100px);
-            border-bottom: 1px solid $border-light;
+            border-bottom: 1px solid $silver-black;
             padding: 0 0 40px 0;
             .footer-slogan {
                 p {
@@ -762,6 +763,7 @@ footer {
                         a {
                             display: block;
                             line-height: 1.5;
+                            color: $dark-gray;
                             &:hover {
                                 text-decoration: underline;
                                 color: $silver-gray;
@@ -770,6 +772,7 @@ footer {
                         p {
                             margin: 0;
                             line-height: 1.5;
+                            color: $dark-gray;
                         }
                     }
                 }
@@ -1272,8 +1275,10 @@ footer {
                 font-weight: 600;
                 font-size: 20px;
                 em {
+                    font-size: 20px;
                     font-style: normal;
                     color: $color-primary;
+                    font-weight: 600;
                 }
             }
             img {
@@ -1373,8 +1378,10 @@ footer {
                 font-weight: 600;
                 font-size: 20px;
                 em {
+                    font-size: 20px;
                     font-style: normal;
                     color: $color-primary;
+                    font-weight: 600;
                 }
             }
         }
